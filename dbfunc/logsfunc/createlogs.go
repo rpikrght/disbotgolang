@@ -38,6 +38,6 @@ func Create(GuildID string) error {
 		log.Printf("createtableerr: %v", err)
 		return err
 	}
-	log.Printf("table for guild %q create: %v", GuildID, err)
+	//log.Printf("table for guild %q create: %v", GuildID, err)
 	return nil
 }
