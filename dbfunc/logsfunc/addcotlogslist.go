@@ -8,7 +8,7 @@ import (
 	"github.com/disgoorg/disgo/events"
 )
 
-func AddToLogsListC(event *events.MessageCreate) error {
+func AddC(event *events.MessageCreate) error {
 	var logs logslist
 	var err error
 	logs.time = time.Now().Format("2006-01-02 15:04:05 MST")
@@ -23,10 +23,10 @@ func AddToLogsListC(event *events.MessageCreate) error {
 	logs.channelid = event.ChannelID.String()
 	logs.typelog = "create"
 	logs.GuildID = event.GuildID.String()
-	return AddToLogs(logs)
+	return add(logs)
 }
 
-func AddToLogsListU(event *events.MessageUpdate) error {
+func AddU(event *events.MessageUpdate) error {
 	var logs logslist
 	var err error
 	logs.time = time.Now().Format("2006-01-02 15:04:05 MST")
@@ -41,5 +41,5 @@ func AddToLogsListU(event *events.MessageUpdate) error {
 	logs.channelid = event.ChannelID.String()
 	logs.typelog = "update"
 	logs.GuildID = event.GuildID.String()
-	return AddToLogs(logs)
+	return add(logs)
 }

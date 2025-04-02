@@ -9,7 +9,7 @@ import (
 	_ "modernc.org/sqlite"
 )
 
-func CreateLogs(GuildID string) error {
+func Create(GuildID string) error {
 	logsdir := "./db/" + GuildID
 	if err := os.MkdirAll(logsdir, 0755); err != nil {
 		log.Printf("logsdirerr: %v", err)

@@ -8,10 +8,10 @@ import (
 	_ "modernc.org/sqlite"
 )
 
-func AddToLogs(logs logslist) error {
+func add(logs logslist) error {
 	_, err := os.Stat("./db/" + logs.GuildID)
 	if os.IsNotExist(err) {
-		CreateLogs(logs.GuildID)
+		Create(logs.GuildID)
 	}
 
 	logspath := "./db/" + logs.GuildID + "/message.db"

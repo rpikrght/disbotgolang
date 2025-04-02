@@ -8,7 +8,7 @@ import (
 )
 
 func MessageUpdate(event *events.MessageUpdate) {
-	if err := logsfunc.AddToLogsListU(event); err != nil {
+	if err := logsfunc.AddU(event); err != nil {
 		log.Printf("logserr: %v", err)
 		return
 	}

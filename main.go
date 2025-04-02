@@ -32,6 +32,7 @@ func main() {
 				gateway.IntentMessageContent,
 			),
 		),
+		bot.WithEventListenerFunc(event.BotAdd),
 		bot.WithEventListenerFunc(event.MessageCreate),
 		bot.WithEventListenerFunc(event.MessageUpdate),
 	)
